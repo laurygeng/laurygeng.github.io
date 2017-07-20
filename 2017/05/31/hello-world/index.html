@@ -9,7 +9,10 @@
     
     <meta name="author" content="John Doe">
     
-    <meta name="description" content="CSS 样式滚动条的css样式存在兼容性问题，可以参考[Writing]来设置(https://github.com/vavd317/cssAbout/blob/master/MC-%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%A0%B7%E5%BC%8F)如果需要实现隐藏横向滚动条">
+    <meta name="description" content="CSS 样式滚动条的css样式存在兼容性问题，可以设置它的样式：    ::-webkit-scrollbar/整体部分/    {    width: 3px;    height:3px;    }
+::-webkit-scrollbar-track/*滑动轨道*/
+{
+-webkit-box-">
     
     
     
@@ -73,7 +76,7 @@
     </p>
   <p class="article-time">
     <time datetime="2017-05-31T05:11:37.779Z" itemprop="datePublished">2017-05-31</time>
-    更新日期:<time datetime="2017-07-20T05:45:13.437Z" itemprop="dateModified">2017-07-20</time>
+    更新日期:<time datetime="2017-07-20T05:49:15.667Z" itemprop="dateModified">2017-07-20</time>
     
   </p>
 </header>
@@ -85,7 +88,28 @@
 		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-样式"><span class="toc-number">1.</span> <span class="toc-text">CSS 样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#touch-js"><span class="toc-number">2.</span> <span class="toc-text">touch.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#蒙层区域的兼容性处理"><span class="toc-number">3.</span> <span class="toc-text">蒙层区域的兼容性处理</span></a></li></ol>
 		</div>
 		
-		<h2 id="CSS-样式"><a href="#CSS-样式" class="headerlink" title="CSS 样式"></a>CSS 样式</h2><p>滚动条的css样式存在兼容性问题，可以参考[Writing]来设置(<a href="https://github.com/vavd317/cssAbout/blob/master/MC-%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%A0%B7%E5%BC%8F" target="_blank" rel="external">https://github.com/vavd317/cssAbout/blob/master/MC-%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%A0%B7%E5%BC%8F</a>)<br>如果需要实现隐藏横向滚动条等具体需求需要在使用的地方设置，overflow-x:hidden<br>（hidden,裁剪内容，不提供滚动条/auto,如果溢出，提供滚动机制/Visible:不裁剪内容，显示在内容框之外）</p>
+		<h2 id="CSS-样式"><a href="#CSS-样式" class="headerlink" title="CSS 样式"></a>CSS 样式</h2><p>滚动条的css样式存在兼容性问题，可以设置它的样式：<br>    ::-webkit-scrollbar/<em>整体部分</em>/<br>    {<br>    width: 3px;<br>    height:3px;<br>    }</p>
+<pre><code>::-webkit-scrollbar-track/*滑动轨道*/
+{
+-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
+border-radius: 0px;
+background: rgba(0,0,0,0.1);
+}
+
+::-webkit-scrollbar-thumb/*滑块*/
+{
+border-radius: 3px;
+-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
+background: rgba(0,0,0,0.2);
+}
+
+::-webkit-scrollbar-thumb:hover/*滑块效果*/
+{
+border-radius: 3px;
+-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
+background: rgba(0,0,0,0.4);
+}
+</code></pre><p>如果需要实现隐藏横向滚动条等具体需求需要在使用的地方设置，overflow-x:hidden<br>（hidden,裁剪内容，不提供滚动条/auto,如果溢出，提供滚动机制/Visible:不裁剪内容，显示在内容框之外）</p>
 <h2 id="touch-js"><a href="#touch-js" class="headerlink" title="touch.js"></a>touch.js</h2><p>弹窗在ipad上面的滚动效果存在兼容性问题，滚动条滚动到弹窗的顶部和底部的时候弹窗后面的屏幕会滚动（蒙层区域）<br>需要禁止弹框中的滚动条，滚动到顶部以上和底部以下区域的touch事件，具体的实现方法是拿到滚动部分的clientHeight（弹框的高度）,和scrollHeight（可滚动区域的总高）,计算出maxHeight（可滚动的高度）.</p>
 <p>touch.js<br>const touch = (el, fn) =&gt; {<br>    let startX, startY;<br>    el.addEventListener(‘touchstart’, e =&gt; {<br>    const start = e.targetTouches[0];<br>    startX = start.pageX;<br>    startY = start.pageY;<br>    });</p>
 <pre><code>el.addEventListener(&apos;touchmove&apos;, e =&gt; {
@@ -132,10 +156,10 @@ fn(moveX, moveY, e);
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2017/06/02/new-article/" title="new article">
+ <a href="/2017/06/02/new-article/" title="CSS布局的常用概念">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  new article</span>
+  CSS布局的常用概念</span>
 </a>
 </div>
 

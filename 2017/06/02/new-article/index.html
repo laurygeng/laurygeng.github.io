@@ -4,10 +4,13 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>new article | Hexo</title>
+    <title>CSS布局的常用概念 | Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="John Doe">
+    
+    <meta name="description" content="CSS 样式书写规范1.给组件书写样式的时候应该命名成一个系列，最多三层。这样在分离的时候可以做为一个整体比较方便（如果使用了cssmodal插件，会自动帮你打包命名）2.类的命名要么用驼峰，要么用-分隔，统一风格
+Block概念及元素宽高设置###block和inline概念：block-leve">
     
     
     
@@ -63,15 +66,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/06/02/new-article/" title="new article" itemprop="url">new article</a>
+      <a href="/2017/06/02/new-article/" title="CSS布局的常用概念" itemprop="url">CSS布局的常用概念</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="John Doe">John Doe</a>
     </p>
   <p class="article-time">
-    <time datetime="2017-06-02T02:23:13.000Z" itemprop="datePublished">2017-06-02</time>
-    更新日期:<time datetime="2017-06-02T02:23:13.539Z" itemprop="dateModified">2017-06-02</time>
+    <time datetime="2017-06-02T02:23:13.539Z" itemprop="datePublished">2017-06-02</time>
+    更新日期:<time datetime="2017-07-20T06:35:13.759Z" itemprop="dateModified">2017-07-20</time>
     
   </p>
 </header>
@@ -80,10 +83,30 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-样式书写规范"><span class="toc-number">1.</span> <span class="toc-text">CSS 样式书写规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Block概念及元素宽高设置"><span class="toc-number">2.</span> <span class="toc-text">Block概念及元素宽高设置</span></a></li></ol>
 		</div>
 		
-		  
+		<h2 id="CSS-样式书写规范"><a href="#CSS-样式书写规范" class="headerlink" title="CSS 样式书写规范"></a>CSS 样式书写规范</h2><p>1.给组件书写样式的时候应该命名成一个系列，最多三层。这样在分离的时候可以做为一个整体比较方便<br>（如果使用了cssmodal插件，会自动帮你打包命名）<br>2.类的命名要么用驼峰，要么用-分隔，统一风格</p>
+<h2 id="Block概念及元素宽高设置"><a href="#Block概念及元素宽高设置" class="headerlink" title="Block概念及元素宽高设置"></a>Block概念及元素宽高设置</h2><p>###block和inline概念：<br>block-level elements (块级元素) 和 inline elements (内联元素)。<br>block元素通常被现实为独立的一块，会单独换一行；inline元素则前后不会产生换行，一系列inline元素都在一行内显示，直到该行排满。</p>
+<p>常见的块级元素有 DIV, FORM, TABLE, P, PRE, H1~H6, DL, OL, UL 等。<br>常见的内联元素有 SPAN, A, STRONG, EM, LABEL, INPUT, SELECT, TEXTAREA, IMG, BR 等。</p>
+<p>###块级元素：<br>除了absolute,fixed,浮动元素之外，其他的块级元素，宽度是从父元素继承的（自动填满父元素的宽度）<br>块级元素设置了宽高仍然可以独占一行，可以设置margin和padding属性<br>一般不会给块级元素设置为行内块，当块级元素需要一行显示多个的时候，会设置float</p>
+<p>###行内元素（span/i）：<br>宽度由子元素宽度决定，而且不能手动设置宽高，水平方向的margin和padding会产生效果，但是垂直方向不会产生效果<br>可以通过display:inline-block来把行内元素，设置为行内块，以便于设置宽高（伪元素/span元素设置背景图）</p>
+<p>##布局的基础概念</p>
+<p>###定位的基础概念</p>
+<p>####相对定位：<br>就是相对于文档中的其他元素进行定位：<br>那些脱离了文档流的元素，比如设置了浮动或者绝对定位的元素，不会对相对定位产生影响<br>relative和static都是相对于文档其他元素进行定位，都属于相对定位的范畴，区别就在与一个可以控制位移一个不能</p>
+<p>#####static<br>默认值，任意 position: static; 的元素不会被特殊的定位。一个 static 元素表示它不会被“positioned”。<br>Top,left,right,bottom,z-index都不会生效。</p>
+<p>######relative<br>表现的和 static 一样，除非你添加了一些额外的属性。<br>在一个相对定位（position属性的值为relative）的元素上设置 top、 right 、 bottom 和 left 属性会使其偏离其正常位置。其<br>他的元素则不会调整位置来弥补它偏离后剩下的空隙。</p>
+<p>可以用position:relative和top、left的设置来实现元素位置的微调</p>
+<p>####绝对定位：</p>
+<p>####绝对定位的特点：<br>块级元素的宽度在未定义时不再为100%，而是根据内容自动调整<br>在不定义z-index的情况下，absolute元素会覆盖在其他元素之上<br>它会脱离正常的文档流，不在占据空间，类似于浮动后的效果</p>
+<p>#####Fixed<br>一个固定定位（position属性的值为fixed）元素会相对于视窗来定位，这意味着即便页面滚动，它还是会停留在相同的位置。和 relative 一样， top 、 right 、 bottom和 left 属性都可用。<br>我相信你已经注意到页面右下角的固定定位元素。你现在可以仔细看看它，这里有它所使用的CSS：</p>
+<p>#####absolute 是最棘手的position值。<br>absolute 与 fixed 的表现类似，除了它不是相对于视窗而是相对于最近的“positioned”祖先元素。如果绝对定位（position属性的值为absolute）的元素没有“positioned”祖先元素，那么它是相对于文档的 body 元素，并且它会随着页面滚动而移动。<br>记住一个“positioned”元素是指position 值不是 static的元素。<br>相对于上一个不是static的父元素进行绝对定位，也就是说如果不指定父元素的position,absolute将会相对于整个html文档进行绝对定位</p>
+<p>###浮动的概念</p>
+<p>设置了浮动的元素会脱离正常的文档流，不仅在y轴上浮动，在z轴上也浮动了起来。<br>父元素的高度会根据子元素的高度自动进行调整，如果我们将子元素设置为浮动，父元素的高度就会变为0</p>
+<p>##常见的布局方式</p>
+<p>###图片+文字在一行内居中显示：</p>
+<p><li><br>    <span></span><br>    <a></a><br></li><br>让li里面的文字和图片居中对齐的方式，单行文本可以text-align：center，<br>左边的icon可以通过设置padding-left的方式给li的左边挪出一块空的地方来，然后通过绝对定位的方式，在那个位置上居中对齐<br>span.icon就display: inline-block;然后设置宽高，然后绝对定位+tarnslate(-50%,-50%)</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 
@@ -92,7 +115,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2017/06/02/new-article/" data-title="new article | Hexo" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2017/06/02/new-article/" data-title="CSS布局的常用概念 | Hexo" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -118,7 +141,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-样式书写规范"><span class="toc-number">1.</span> <span class="toc-text">CSS 样式书写规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Block概念及元素宽高设置"><span class="toc-number">2.</span> <span class="toc-text">Block概念及元素宽高设置</span></a></li></ol>
   </div>
 
 <div id="asidepart">
