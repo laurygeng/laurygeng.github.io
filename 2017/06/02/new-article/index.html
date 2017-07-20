@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>CSS布局的常用概念 | Hexo</title>
+    <title>CSS常用概念 | Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="John Doe">
     
     <meta name="description" content="CSS 样式书写规范1.给组件书写样式的时候应该命名成一个系列，最多三层。这样在分离的时候可以做为一个整体比较方便（如果使用了cssmodal插件，会自动帮你打包命名）2.类的命名要么用驼峰，要么用-分隔，统一风格
-Block概念及元素宽高设置###block和inline概念：block-leve">
+Block概念及元素宽高设置block和inline概念：block-level e">
     
     
     
@@ -66,7 +66,7 @@ Block概念及元素宽高设置###block和inline概念：block-leve">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/06/02/new-article/" title="CSS布局的常用概念" itemprop="url">CSS布局的常用概念</a>
+      <a href="/2017/06/02/new-article/" title="CSS常用概念" itemprop="url">CSS常用概念</a>
   </h1>
   <p class="article-author">By
     
@@ -74,7 +74,7 @@ Block概念及元素宽高设置###block和inline概念：block-leve">
     </p>
   <p class="article-time">
     <time datetime="2017-06-02T02:23:13.539Z" itemprop="datePublished">2017-06-02</time>
-    更新日期:<time datetime="2017-07-20T06:35:13.759Z" itemprop="dateModified">2017-07-20</time>
+    更新日期:<time datetime="2017-07-20T06:47:31.658Z" itemprop="dateModified">2017-07-20</time>
     
   </p>
 </header>
@@ -83,29 +83,24 @@ Block概念及元素宽高设置###block和inline概念：block-leve">
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-样式书写规范"><span class="toc-number">1.</span> <span class="toc-text">CSS 样式书写规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Block概念及元素宽高设置"><span class="toc-number">2.</span> <span class="toc-text">Block概念及元素宽高设置</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-样式书写规范"><span class="toc-number">1.</span> <span class="toc-text">CSS 样式书写规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Block概念及元素宽高设置"><span class="toc-number">2.</span> <span class="toc-text">Block概念及元素宽高设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#block和inline概念："><span class="toc-number">2.1.</span> <span class="toc-text">block和inline概念：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#块级元素："><span class="toc-number">2.2.</span> <span class="toc-text">块级元素：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#行内元素（span-i）："><span class="toc-number">2.3.</span> <span class="toc-text">行内元素（span/i）：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#布局的基础概念"><span class="toc-number">3.</span> <span class="toc-text">布局的基础概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定位的基础概念"><span class="toc-number">3.1.</span> <span class="toc-text">定位的基础概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#相对定位："><span class="toc-number">3.1.1.</span> <span class="toc-text">相对定位：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#static"><span class="toc-number">3.1.1.1.</span> <span class="toc-text">static</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#relative"><span class="toc-number">3.1.1.1.1.</span> <span class="toc-text">relative</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#绝对定位："><span class="toc-number">3.1.2.</span> <span class="toc-text">绝对定位：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#绝对定位的特点："><span class="toc-number">3.1.3.</span> <span class="toc-text">绝对定位的特点：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Fixed"><span class="toc-number">3.1.3.1.</span> <span class="toc-text">Fixed</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浮动的概念"><span class="toc-number">3.2.</span> <span class="toc-text">浮动的概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见的布局方式"><span class="toc-number">4.</span> <span class="toc-text">常见的布局方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#图片-文字在一行内居中显示："><span class="toc-number">4.1.</span> <span class="toc-text">图片+文字在一行内居中显示：</span></a></li></ol></li></ol>
 		</div>
 		
 		<h2 id="CSS-样式书写规范"><a href="#CSS-样式书写规范" class="headerlink" title="CSS 样式书写规范"></a>CSS 样式书写规范</h2><p>1.给组件书写样式的时候应该命名成一个系列，最多三层。这样在分离的时候可以做为一个整体比较方便<br>（如果使用了cssmodal插件，会自动帮你打包命名）<br>2.类的命名要么用驼峰，要么用-分隔，统一风格</p>
-<h2 id="Block概念及元素宽高设置"><a href="#Block概念及元素宽高设置" class="headerlink" title="Block概念及元素宽高设置"></a>Block概念及元素宽高设置</h2><p>###block和inline概念：<br>block-level elements (块级元素) 和 inline elements (内联元素)。<br>block元素通常被现实为独立的一块，会单独换一行；inline元素则前后不会产生换行，一系列inline元素都在一行内显示，直到该行排满。</p>
+<h2 id="Block概念及元素宽高设置"><a href="#Block概念及元素宽高设置" class="headerlink" title="Block概念及元素宽高设置"></a>Block概念及元素宽高设置</h2><h3 id="block和inline概念："><a href="#block和inline概念：" class="headerlink" title="block和inline概念："></a>block和inline概念：</h3><p>block-level elements (块级元素) 和 inline elements (内联元素)。<br>block元素通常被现实为独立的一块，会单独换一行；inline元素则前后不会产生换行，一系列inline元素都在一行内显示，直到该行排满。</p>
 <p>常见的块级元素有 DIV, FORM, TABLE, P, PRE, H1~H6, DL, OL, UL 等。<br>常见的内联元素有 SPAN, A, STRONG, EM, LABEL, INPUT, SELECT, TEXTAREA, IMG, BR 等。</p>
-<p>###块级元素：<br>除了absolute,fixed,浮动元素之外，其他的块级元素，宽度是从父元素继承的（自动填满父元素的宽度）<br>块级元素设置了宽高仍然可以独占一行，可以设置margin和padding属性<br>一般不会给块级元素设置为行内块，当块级元素需要一行显示多个的时候，会设置float</p>
-<p>###行内元素（span/i）：<br>宽度由子元素宽度决定，而且不能手动设置宽高，水平方向的margin和padding会产生效果，但是垂直方向不会产生效果<br>可以通过display:inline-block来把行内元素，设置为行内块，以便于设置宽高（伪元素/span元素设置背景图）</p>
-<p>##布局的基础概念</p>
-<p>###定位的基础概念</p>
-<p>####相对定位：<br>就是相对于文档中的其他元素进行定位：<br>那些脱离了文档流的元素，比如设置了浮动或者绝对定位的元素，不会对相对定位产生影响<br>relative和static都是相对于文档其他元素进行定位，都属于相对定位的范畴，区别就在与一个可以控制位移一个不能</p>
-<p>#####static<br>默认值，任意 position: static; 的元素不会被特殊的定位。一个 static 元素表示它不会被“positioned”。<br>Top,left,right,bottom,z-index都不会生效。</p>
-<p>######relative<br>表现的和 static 一样，除非你添加了一些额外的属性。<br>在一个相对定位（position属性的值为relative）的元素上设置 top、 right 、 bottom 和 left 属性会使其偏离其正常位置。其<br>他的元素则不会调整位置来弥补它偏离后剩下的空隙。</p>
+<h3 id="块级元素："><a href="#块级元素：" class="headerlink" title="块级元素："></a>块级元素：</h3><p>除了absolute,fixed,浮动元素之外，其他的块级元素，宽度是从父元素继承的（自动填满父元素的宽度）<br>块级元素设置了宽高仍然可以独占一行，可以设置margin和padding属性<br>一般不会给块级元素设置为行内块，当块级元素需要一行显示多个的时候，会设置float</p>
+<h3 id="行内元素（span-i）："><a href="#行内元素（span-i）：" class="headerlink" title="行内元素（span/i）："></a>行内元素（span/i）：</h3><p>宽度由子元素宽度决定，而且不能手动设置宽高，水平方向的margin和padding会产生效果，但是垂直方向不会产生效果<br>可以通过display:inline-block来把行内元素，设置为行内块，以便于设置宽高（伪元素/span元素设置背景图）</p>
+<h2 id="布局的基础概念"><a href="#布局的基础概念" class="headerlink" title="布局的基础概念"></a>布局的基础概念</h2><h3 id="定位的基础概念"><a href="#定位的基础概念" class="headerlink" title="定位的基础概念"></a>定位的基础概念</h3><h4 id="相对定位："><a href="#相对定位：" class="headerlink" title="相对定位："></a>相对定位：</h4><p>就是相对于文档中的其他元素进行定位：<br>那些脱离了文档流的元素，比如设置了浮动或者绝对定位的元素，不会对相对定位产生影响<br>relative和static都是相对于文档其他元素进行定位，都属于相对定位的范畴，区别就在与一个可以控制位移一个不能</p>
+<h5 id="static"><a href="#static" class="headerlink" title="static"></a>static</h5><p>默认值，任意 position: static; 的元素不会被特殊的定位。一个 static 元素表示它不会被“positioned”。<br>Top,left,right,bottom,z-index都不会生效。</p>
+<h6 id="relative"><a href="#relative" class="headerlink" title="relative"></a>relative</h6><p>表现的和 static 一样，除非你添加了一些额外的属性。<br>在一个相对定位（position属性的值为relative）的元素上设置 top、 right 、 bottom 和 left 属性会使其偏离其正常位置。其<br>他的元素则不会调整位置来弥补它偏离后剩下的空隙。</p>
 <p>可以用position:relative和top、left的设置来实现元素位置的微调</p>
-<p>####绝对定位：</p>
-<p>####绝对定位的特点：<br>块级元素的宽度在未定义时不再为100%，而是根据内容自动调整<br>在不定义z-index的情况下，absolute元素会覆盖在其他元素之上<br>它会脱离正常的文档流，不在占据空间，类似于浮动后的效果</p>
-<p>#####Fixed<br>一个固定定位（position属性的值为fixed）元素会相对于视窗来定位，这意味着即便页面滚动，它还是会停留在相同的位置。和 relative 一样， top 、 right 、 bottom和 left 属性都可用。<br>我相信你已经注意到页面右下角的固定定位元素。你现在可以仔细看看它，这里有它所使用的CSS：</p>
+<h4 id="绝对定位："><a href="#绝对定位：" class="headerlink" title="绝对定位："></a>绝对定位：</h4><h4 id="绝对定位的特点："><a href="#绝对定位的特点：" class="headerlink" title="绝对定位的特点："></a>绝对定位的特点：</h4><p>块级元素的宽度在未定义时不再为100%，而是根据内容自动调整<br>在不定义z-index的情况下，absolute元素会覆盖在其他元素之上<br>它会脱离正常的文档流，不在占据空间，类似于浮动后的效果</p>
+<h5 id="Fixed"><a href="#Fixed" class="headerlink" title="Fixed"></a>Fixed</h5><p>一个固定定位（position属性的值为fixed）元素会相对于视窗来定位，这意味着即便页面滚动，它还是会停留在相同的位置。和 relative 一样， top 、 right 、 bottom和 left 属性都可用。<br>我相信你已经注意到页面右下角的固定定位元素。你现在可以仔细看看它，这里有它所使用的CSS：</p>
 <p>#####absolute 是最棘手的position值。<br>absolute 与 fixed 的表现类似，除了它不是相对于视窗而是相对于最近的“positioned”祖先元素。如果绝对定位（position属性的值为absolute）的元素没有“positioned”祖先元素，那么它是相对于文档的 body 元素，并且它会随着页面滚动而移动。<br>记住一个“positioned”元素是指position 值不是 static的元素。<br>相对于上一个不是static的父元素进行绝对定位，也就是说如果不指定父元素的position,absolute将会相对于整个html文档进行绝对定位</p>
-<p>###浮动的概念</p>
-<p>设置了浮动的元素会脱离正常的文档流，不仅在y轴上浮动，在z轴上也浮动了起来。<br>父元素的高度会根据子元素的高度自动进行调整，如果我们将子元素设置为浮动，父元素的高度就会变为0</p>
-<p>##常见的布局方式</p>
-<p>###图片+文字在一行内居中显示：</p>
-<p><li><br>    <span></span><br>    <a></a><br></li><br>让li里面的文字和图片居中对齐的方式，单行文本可以text-align：center，<br>左边的icon可以通过设置padding-left的方式给li的左边挪出一块空的地方来，然后通过绝对定位的方式，在那个位置上居中对齐<br>span.icon就display: inline-block;然后设置宽高，然后绝对定位+tarnslate(-50%,-50%)</p>
+<h3 id="浮动的概念"><a href="#浮动的概念" class="headerlink" title="浮动的概念"></a>浮动的概念</h3><p>设置了浮动的元素会脱离正常的文档流，不仅在y轴上浮动，在z轴上也浮动了起来。<br>父元素的高度会根据子元素的高度自动进行调整，如果我们将子元素设置为浮动，父元素的高度就会变为0</p>
+<p>###Rem 和百分比<br>根字体是根据屏幕的尺寸不同去设置的，例如37.5,32等，就是375的屏幕尺寸，和320的屏幕尺寸除以10计算出来的。<br>用375px的屏幕宽度为例子，在布局的时候如果给图片宽度设置375px,然后打包工具里面的pxtoRem的方法（写死了转换单位是37.5）就会把元素的尺寸转换成10rem,（10rem*根字体37.5）就占满了正屏幕<br>我们的设计图是按照375的屏幕尺寸来设计的，所以我们可以这样来给图片设置宽度，然后打包工具打包成rem然后框架内的js会检测到不同屏幕宽度，设置不同的根字体。<br>浏览器会用转换出的rem去乘以当前的根字体（解析rem转换成px）<br>比如10rem乘以ipad(100的根字体)所以图片的尺寸就是1000px，就可以自适应屏幕的尺寸。(这样所有的字和图片就会很大)<br>如果一定要用iphnoe的设计去兼容ipad的设计就需要手工的给ipad的根字体设置成37.5然后在布局上使用百分比的方式，不要外层元素写死一个宽度</p>
+<h2 id="常见的布局方式"><a href="#常见的布局方式" class="headerlink" title="常见的布局方式"></a>常见的布局方式</h2><h3 id="图片-文字在一行内居中显示："><a href="#图片-文字在一行内居中显示：" class="headerlink" title="图片+文字在一行内居中显示："></a>图片+文字在一行内居中显示：</h3><p><li><br>    <span></span><br>    <a></a><br></li><br>让li里面的文字和图片居中对齐的方式，单行文本可以text-align：center，<br>左边的icon可以通过设置padding-left的方式给li的左边挪出一块空的地方来，然后通过绝对定位的方式，在那个位置上居中对齐<br>span.icon就display: inline-block;然后设置宽高，然后绝对定位+tarnslate(-50%,-50%)</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -115,7 +110,7 @@ Block概念及元素宽高设置###block和inline概念：block-leve">
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2017/06/02/new-article/" data-title="CSS布局的常用概念 | Hexo" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2017/06/02/new-article/" data-title="CSS常用概念 | Hexo" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -141,7 +136,7 @@ Block概念及元素宽高设置###block和inline概念：block-leve">
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-样式书写规范"><span class="toc-number">1.</span> <span class="toc-text">CSS 样式书写规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Block概念及元素宽高设置"><span class="toc-number">2.</span> <span class="toc-text">Block概念及元素宽高设置</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-样式书写规范"><span class="toc-number">1.</span> <span class="toc-text">CSS 样式书写规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Block概念及元素宽高设置"><span class="toc-number">2.</span> <span class="toc-text">Block概念及元素宽高设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#block和inline概念："><span class="toc-number">2.1.</span> <span class="toc-text">block和inline概念：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#块级元素："><span class="toc-number">2.2.</span> <span class="toc-text">块级元素：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#行内元素（span-i）："><span class="toc-number">2.3.</span> <span class="toc-text">行内元素（span/i）：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#布局的基础概念"><span class="toc-number">3.</span> <span class="toc-text">布局的基础概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定位的基础概念"><span class="toc-number">3.1.</span> <span class="toc-text">定位的基础概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#相对定位："><span class="toc-number">3.1.1.</span> <span class="toc-text">相对定位：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#static"><span class="toc-number">3.1.1.1.</span> <span class="toc-text">static</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#relative"><span class="toc-number">3.1.1.1.1.</span> <span class="toc-text">relative</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#绝对定位："><span class="toc-number">3.1.2.</span> <span class="toc-text">绝对定位：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#绝对定位的特点："><span class="toc-number">3.1.3.</span> <span class="toc-text">绝对定位的特点：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Fixed"><span class="toc-number">3.1.3.1.</span> <span class="toc-text">Fixed</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浮动的概念"><span class="toc-number">3.2.</span> <span class="toc-text">浮动的概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见的布局方式"><span class="toc-number">4.</span> <span class="toc-text">常见的布局方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#图片-文字在一行内居中显示："><span class="toc-number">4.1.</span> <span class="toc-text">图片+文字在一行内居中显示：</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
