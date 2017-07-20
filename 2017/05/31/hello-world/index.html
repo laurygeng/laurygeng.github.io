@@ -9,7 +9,7 @@
     
     <meta name="author" content="John Doe">
     
-    <meta name="description" content="CSS 样式滚动条的css样式存在兼容性问题，可以参考[mc-滚动条样式]来设置(https://github.com/vavd317/cssAbout/blob/master/MC-%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%A0%B7%E5%BC%8F)如果需要实现隐藏横向滚动">
+    <meta name="description" content="CSS 样式滚动条的css样式存在兼容性问题，可以参考[Writing]来设置(https://github.com/vavd317/cssAbout/blob/master/MC-%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%A0%B7%E5%BC%8F)如果需要实现隐藏横向滚动条">
     
     
     
@@ -36,7 +36,7 @@
 				<h1 class="site-name"><a href="/" title="Hexo">Hexo</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -73,7 +73,7 @@
     </p>
   <p class="article-time">
     <time datetime="2017-05-31T05:11:37.779Z" itemprop="datePublished">2017-05-31</time>
-    更新日期:<time datetime="2017-07-20T04:53:42.331Z" itemprop="dateModified">2017-07-20</time>
+    更新日期:<time datetime="2017-07-20T05:45:13.437Z" itemprop="dateModified">2017-07-20</time>
     
   </p>
 </header>
@@ -81,11 +81,11 @@
 		
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-样式"><span class="toc-number">1.</span> <span class="toc-text">CSS 样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#touch-js"><span class="toc-number">2.</span> <span class="toc-text">touch.js</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#蒙层区域的兼容性处理"><span class="toc-number">2.1.</span> <span class="toc-text">蒙层区域的兼容性处理</span></a></li></ol></li></ol>
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-样式"><span class="toc-number">1.</span> <span class="toc-text">CSS 样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#touch-js"><span class="toc-number">2.</span> <span class="toc-text">touch.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#蒙层区域的兼容性处理"><span class="toc-number">3.</span> <span class="toc-text">蒙层区域的兼容性处理</span></a></li></ol>
 		</div>
 		
-		<h2 id="CSS-样式"><a href="#CSS-样式" class="headerlink" title="CSS 样式"></a>CSS 样式</h2><p>滚动条的css样式存在兼容性问题，可以参考[mc-滚动条样式]来设置(<a href="https://github.com/vavd317/cssAbout/blob/master/MC-%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%A0%B7%E5%BC%8F)如果需要实现隐藏横向滚动条等具体需求需要在使用的地方设置，" target="_blank" rel="external">https://github.com/vavd317/cssAbout/blob/master/MC-%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%A0%B7%E5%BC%8F)如果需要实现隐藏横向滚动条等具体需求需要在使用的地方设置，</a><br>overflow-x:hidden（hidden,裁剪内容，不提供滚动条/auto,如果溢出，提供滚动机制/Visible:不裁剪内容，显示在内容框之外）</p>
+		<h2 id="CSS-样式"><a href="#CSS-样式" class="headerlink" title="CSS 样式"></a>CSS 样式</h2><p>滚动条的css样式存在兼容性问题，可以参考[Writing]来设置(<a href="https://github.com/vavd317/cssAbout/blob/master/MC-%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%A0%B7%E5%BC%8F" target="_blank" rel="external">https://github.com/vavd317/cssAbout/blob/master/MC-%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%A0%B7%E5%BC%8F</a>)<br>如果需要实现隐藏横向滚动条等具体需求需要在使用的地方设置，overflow-x:hidden<br>（hidden,裁剪内容，不提供滚动条/auto,如果溢出，提供滚动机制/Visible:不裁剪内容，显示在内容框之外）</p>
 <h2 id="touch-js"><a href="#touch-js" class="headerlink" title="touch.js"></a>touch.js</h2><p>弹窗在ipad上面的滚动效果存在兼容性问题，滚动条滚动到弹窗的顶部和底部的时候弹窗后面的屏幕会滚动（蒙层区域）<br>需要禁止弹框中的滚动条，滚动到顶部以上和底部以下区域的touch事件，具体的实现方法是拿到滚动部分的clientHeight（弹框的高度）,和scrollHeight（可滚动区域的总高）,计算出maxHeight（可滚动的高度）.</p>
 <p>touch.js<br>const touch = (el, fn) =&gt; {<br>    let startX, startY;<br>    el.addEventListener(‘touchstart’, e =&gt; {<br>    const start = e.targetTouches[0];<br>    startX = start.pageX;<br>    startY = start.pageY;<br>    });</p>
 <pre><code>el.addEventListener(&apos;touchmove&apos;, e =&gt; {
@@ -96,10 +96,15 @@ fn(moveX, moveY, e);
 });
 </code></pre><p>}</p>
 <p>let scrollpart = $(‘.agreement-content’)[0];<br>    touch(scrollpart, (x, y, e) =&gt; {<br>    const curScrollHeight = scrollpart.scrollTop;<br>    const maxScrollHeight = scrollpart.scrollHeight - scrollpart.clientHeight;<br>    if (!maxScrollHeight) {<br>    e.preventDefault();<br>    } else if (curScrollHeight &lt;=0 &amp;&amp; y &gt; 0) {<br>    e.preventDefault();<br>    } else if (curScrollHeight &gt;= maxScrollHeight &amp;&amp; y &lt; 0) {<br>    e.preventDefault();<br>}<br>    });<br>        ($(‘.overlay’)[0]).addEventListener(‘touchStart’, e =&gt; {<br>            e.preventDefault();<br>        });<br>        ($(‘.overlay’)[0]).addEventListener(‘touchmove’, e =&gt; {<br>            e.preventDefault();<br>        });<br>},</p>
-<h3 id="蒙层区域的兼容性处理"><a href="#蒙层区域的兼容性处理" class="headerlink" title="蒙层区域的兼容性处理"></a>蒙层区域的兼容性处理</h3><p>一般蒙层区域的样式处理是在弹框出来的时候显示蒙层，蒙层的样式：<br>    {<br>        position: fixed;<br>        z-index: 99990;<br>        top: 0;<br>        right: 0;<br>        bottom: 0;<br>        left: 0;<br>        background-color: #000;<br>        opacity: .4;<br>    }<br>同时给body元素的样式上添加样式：<br>{<br>    height:100%;overflow:hidden<br>}<br>防止页面的滚动，但是在触屏端需要做兼容性处理: 取蒙层区域(overlay)，在touchStart和touchmove事件中禁用touch</p>
-<p>($(‘.overlay’)[0]).addEventListener(‘touchStart’, e =&gt; {<br>        e.preventDefault();<br> });</p>
-<p> ($(‘.overlay’)[0]).addEventListener(‘touchmove’, e =&gt; {<br>        e.preventDefault();<br> });</p>
-<!--<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<h2 id="蒙层区域的兼容性处理"><a href="#蒙层区域的兼容性处理" class="headerlink" title="蒙层区域的兼容性处理"></a>蒙层区域的兼容性处理</h2><p>一般蒙层区域的样式处理是在弹框出来的时候显示蒙层，蒙层的样式：<br>    {<br>        position: fixed;<br>        z-index: 99990;<br>        top: 0;<br>        right: 0;<br>        bottom: 0;<br>        left: 0;<br>        background-color: #000;<br>        opacity: .4;<br>    }<br>同时给body元素的样式上添加样式：<br>    {<br>        height:100%;overflow:hidden<br>    }<br>防止页面的滚动，但是在触屏端需要做兼容性处理: 取蒙层区域(overlay)，在touchStart和touchmove事件中禁用touch</p>
+<pre><code>($(&apos;.overlay&apos;)[0]).addEventListener(&apos;touchStart&apos;, e =&gt; {
+     e.preventDefault();
+});
+
+ ($(&apos;.overlay&apos;)[0]).addEventListener(&apos;touchmove&apos;, e =&gt; {
+     e.preventDefault();
+ });
+</code></pre><!--<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
@@ -139,15 +144,15 @@ fn(moveX, moveY, e);
 
 	
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-样式"><span class="toc-number">1.</span> <span class="toc-text">CSS 样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#touch-js"><span class="toc-number">2.</span> <span class="toc-text">touch.js</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#蒙层区域的兼容性处理"><span class="toc-number">2.1.</span> <span class="toc-text">蒙层区域的兼容性处理</span></a></li></ol></li></ol>
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-样式"><span class="toc-number">1.</span> <span class="toc-text">CSS 样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#touch-js"><span class="toc-number">2.</span> <span class="toc-text">touch.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#蒙层区域的兼容性处理"><span class="toc-number">3.</span> <span class="toc-text">蒙层区域的兼容性处理</span></a></li></ol>
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
 
   
@@ -155,7 +160,7 @@ fn(moveX, moveY, e);
   
 
   <div class="rsspart">
-	<a href="null" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
 </div>
 
   <div class="widget tag">
