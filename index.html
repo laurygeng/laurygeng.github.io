@@ -184,47 +184,14 @@
 <h3 id="后续可以积累的地方："><a href="#后续可以积累的地方：" class="headerlink" title="后续可以积累的地方："></a>后续可以积累的地方：</h3><blockquote>
 <p>下拉菜单的渲染：<br>代码：</p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>上代码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><div class="col-md-1 optiontex"></div></td>
-</tr>
-</tbody>
-</table>
-<pre><code>&lt;select class=&quot;form-control sel&quot; v-model=&quot;selProjectId&quot; v-on:change=&quot;changeProject(selProjectId)&quot;&gt;
-    &lt;option v-for=&quot;item in projectList&quot; v-bind:value=&quot;item.ProjectId&quot;&gt;{{item.ProjectName}}&lt;/option&gt;
-&lt;/select&gt;
-</code></pre><p>        | </p>
+<p>| <div class="col-md-1 optiontex"><br>    <select class="form-control sel" v-model="selProjectId" v-on:change="changeProject(selProjectId)"><br>        <option v-for="item in projectList" v-bind:value="item.ProjectId"></option><br>    </select><br>  </div>      | </p>
 <blockquote>
 <p>showDes($event,item)，传event的方法，showDes: function (e, item) {<br>                        $(e.target).tooltip();<br>                    },</p>
 <p>万能的jquery,在很多类似的场景下还是很有用的：updated: function () {<br>    var isViewPage = this.getQueryString(“isViewPage”);<br>    if (isViewPage &amp;&amp; isViewPage == 1) {<br>        $(‘.pgbox’).find(‘input, select’).attr(‘readonly’, true).attr(‘disabled’, true);<br>        $(‘.pgbox’).find(‘.del-icon, button, .tddelete’).remove();<br>    }<br>}</p>
 <p>数据字典的用法 serviceTypeDic: {<br>                    ‘1’:’人工’,<br>                    ‘2’: ‘系统’,<br>                    ‘3’: ‘人工/系统’<br>                },                  </p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>上代码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td><td width="10%"></td>
-</tr>
-</tbody>
-</table>
-<pre><code>        &lt;span class=&quot;optiontex&quot; v-if=&quot;isEdit&quot;&gt;
-            &lt;select class=&quot;form-control sel&quot; v-model=&quot;item.serviceType&quot; v-on:change=&apos;changeServiceType(item)&apos;&gt;
-                &lt;option v-for=&quot;(value, key) in serviceTypeDic&quot; v-bind:value=&quot;key&quot;&gt;{{value}}&lt;/option&gt;
-            &lt;/select&gt;
-        &lt;/span&gt;
-        &lt;span v-if=&quot;!isEdit&quot;&gt;{{serviceTypeDic[item.serviceType]}}&lt;/span&gt;
-&lt;/td&gt;     | 
-</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/259-0ad0d0bfc1c608b6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>| <td width="10%"><br>            <span class="optiontex" v-if="isEdit"><br>                <select class="form-control sel" v-model="item.serviceType" v-on:change="changeServiceType(item)"><br>                    <option v-for="(value, key) in serviceTypeDic" v-bind:value="key"></option><br>                </select><br>            </span><br>            <span v-if="!isEdit"></span><br>    </td>| </p>
+<p><img src="http://upload-images.jianshu.io/upload_images/259-0ad0d0bfc1c608b6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
       
 
