@@ -179,18 +179,14 @@
 <li>要判断一下，有id的时候才去调用后端的方法，删除。否则就直接操作UI，不传id给后端的接口会报错。</li>
 <li>需要很多验证条件综合为true才能通过的时候需要多引入一个字段来判断是否所有的验证条件都通过了</li>
 </ul>
-<h3 id="CSS中犯的错"><a href="#CSS中犯的错" class="headerlink" title="CSS中犯的错"></a>CSS中犯的错</h3><p>结合bootStrap的使用过程中，尽量不要去直接改变原有的类的样式，而是写一个新的类来覆盖。否则很多地方都会受到影响</p>
-<h3 id="后期需要优化的地方"><a href="#后期需要优化的地方" class="headerlink" title="后期需要优化的地方"></a>后期需要优化的地方</h3><p>vuex的引入，对状态管理的理解<br>封装弹框和table组件<br>通用的方法可以提取出来放在一个地方，统一调用。就不用每个页面都写了，公共的css也是一样<br>目前的通用方法是校验不为空，为正整数，还有截取地址栏上面的参数</p>
+<h3 id="CSS中犯的错："><a href="#CSS中犯的错：" class="headerlink" title="CSS中犯的错："></a>CSS中犯的错：</h3><p>结合bootStrap的使用过程中，尽量不要去直接改变原有的类的样式，而是写一个新的类来覆盖。否则很多地方都会受到影响</p>
+<h3 id="后期需要优化的地方："><a href="#后期需要优化的地方：" class="headerlink" title="后期需要优化的地方："></a>后期需要优化的地方：</h3><p>vuex的引入，对状态管理的理解<br>封装弹框和table组件<br>通用的方法可以提取出来放在一个地方，统一调用。就不用每个页面都写了，公共的css也是一样<br>目前的通用方法是校验不为空，为正整数，还有截取地址栏上面的参数</p>
 <h3 id="后续可以积累的地方："><a href="#后续可以积累的地方：" class="headerlink" title="后续可以积累的地方："></a>后续可以积累的地方：</h3><blockquote>
-<p>下拉菜单的渲染：</p>
-<div class="col-md-1 optiontex"><br>    <select class="form-control sel" v-model="selProjectId" v-on:change="changeProject(selProjectId)"><br>        <option v-for="item in projectList" v-bind:value="item.ProjectId"></option><br>    </select><br></div>
-
-
+<p>下拉菜单的渲染：<br>代码：<div class="col-md-1 optiontex"><br>    <select class="form-control sel" v-model="selProjectId" v-on:change="changeProject(selProjectId)"><br>        <option v-for="item in projectList" v-bind:value="item.ProjectId"></option><br>    </select><br>  </div></p>
 <p>showDes($event,item)，传event的方法，showDes: function (e, item) {<br>                        $(e.target).tooltip();<br>                    },</p>
 <p>万能的jquery,在很多类似的场景下还是很有用的：updated: function () {<br>    var isViewPage = this.getQueryString(“isViewPage”);<br>    if (isViewPage &amp;&amp; isViewPage == 1) {<br>        $(‘.pgbox’).find(‘input, select’).attr(‘readonly’, true).attr(‘disabled’, true);<br>        $(‘.pgbox’).find(‘.del-icon, button, .tddelete’).remove();<br>    }<br>}</p>
 <p>数据字典的用法 serviceTypeDic: {<br>                    ‘1’:’人工’,<br>                    ‘2’: ‘系统’,<br>                    ‘3’: ‘人工/系统’<br>                },                  </p>
- <td width="10%"><br>            <span class="optiontex" v-if="isEdit"><br>                <select class="form-control sel" v-model="item.serviceType" v-on:change="changeServiceType(item)"><br>                    <option v-for="(value, key) in serviceTypeDic" v-bind:value="key"></option><br>                </select><br>            </span><br>            <span v-if="!isEdit"></span><br>        </td>
-
+<p> 代码：<td width="10%"><br>            <span class="optiontex" v-if="isEdit"><br>                <select class="form-control sel" v-model="item.serviceType" v-on:change="changeServiceType(item)"><br>                    <option v-for="(value, key) in serviceTypeDic" v-bind:value="key"></option><br>                </select><br>            </span><br>            <span v-if="!isEdit"></span><br>    </td></p>
 </blockquote>
 <table>
 <thead>
@@ -218,15 +214,6 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>有没有觉得这个表格的对齐方式有点奇怪</p>
-</blockquote>
-<p><a href="http://www.jianshu.com" target="_blank" rel="external">简书</a></p>
-<ul>
-<li>好吧，这些语法暂时应该够我用的了</li>
-<li>只是想偶尔写点东西，抒发下感情，记录下生活</li>
-<li>以后老了，不知道这个还看不看的到</li>
-</ul>
 <p><img src="http://upload-images.jianshu.io/upload_images/259-0ad0d0bfc1c608b6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
       
