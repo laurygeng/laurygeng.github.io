@@ -182,11 +182,7 @@
 <h3 id="CSS中犯的错："><a href="#CSS中犯的错：" class="headerlink" title="CSS中犯的错："></a>CSS中犯的错：</h3><p>结合bootStrap的使用过程中，尽量不要去直接改变原有的类的样式，而是写一个新的类来覆盖。否则很多地方都会受到影响</p>
 <h3 id="后期需要优化的地方："><a href="#后期需要优化的地方：" class="headerlink" title="后期需要优化的地方："></a>后期需要优化的地方：</h3><p>vuex的引入，对状态管理的理解<br>封装弹框和table组件<br>通用的方法可以提取出来放在一个地方，统一调用。就不用每个页面都写了，公共的css也是一样<br>目前的通用方法是校验不为空，为正整数，还有截取地址栏上面的参数</p>
 <h3 id="后续可以积累的地方："><a href="#后续可以积累的地方：" class="headerlink" title="后续可以积累的地方："></a>后续可以积累的地方：</h3><blockquote>
-<p>下拉菜单的渲染：<br>代码：<div class="col-md-1 optiontex"><br>    <select class="form-control sel" v-model="selProjectId" v-on:change="changeProject(selProjectId)"><br>        <option v-for="item in projectList" v-bind:value="item.ProjectId"></option><br>    </select><br>  </div></p>
-<p>showDes($event,item)，传event的方法，showDes: function (e, item) {<br>                        $(e.target).tooltip();<br>                    },</p>
-<p>万能的jquery,在很多类似的场景下还是很有用的：updated: function () {<br>    var isViewPage = this.getQueryString(“isViewPage”);<br>    if (isViewPage &amp;&amp; isViewPage == 1) {<br>        $(‘.pgbox’).find(‘input, select’).attr(‘readonly’, true).attr(‘disabled’, true);<br>        $(‘.pgbox’).find(‘.del-icon, button, .tddelete’).remove();<br>    }<br>}</p>
-<p>数据字典的用法 serviceTypeDic: {<br>                    ‘1’:’人工’,<br>                    ‘2’: ‘系统’,<br>                    ‘3’: ‘人工/系统’<br>                },                  </p>
-<p> 代码：<td width="10%"><br>            <span class="optiontex" v-if="isEdit"><br>                <select class="form-control sel" v-model="item.serviceType" v-on:change="changeServiceType(item)"><br>                    <option v-for="(value, key) in serviceTypeDic" v-bind:value="key"></option><br>                </select><br>            </span><br>            <span v-if="!isEdit"></span><br>    </td></p>
+<p>下拉菜单的渲染：<br>代码：</p>
 </blockquote>
 <table>
 <thead>
@@ -198,22 +194,42 @@
 </thead>
 <tbody>
 <tr>
-<td>Top one is 鸡蛋饼</td>
-<td style="text-align:center">喝粥</td>
-<td style="text-align:right">火锅</td>
-</tr>
-<tr>
-<td>Top 2 is KFC</td>
-<td style="text-align:center">蔬菜沙拉</td>
-<td style="text-align:right">日本料理</td>
-</tr>
-<tr>
-<td>Top 3 is 老豆腐</td>
-<td style="text-align:center">意大利面</td>
-<td style="text-align:right">麻辣小龙虾</td>
+<td><div class="col-md-1 optiontex"></div></td>
 </tr>
 </tbody>
 </table>
+<pre><code>&lt;select class=&quot;form-control sel&quot; v-model=&quot;selProjectId&quot; v-on:change=&quot;changeProject(selProjectId)&quot;&gt;
+    &lt;option v-for=&quot;item in projectList&quot; v-bind:value=&quot;item.ProjectId&quot;&gt;{{item.ProjectName}}&lt;/option&gt;
+&lt;/select&gt;
+</code></pre><p>        | 喝粥 |  火锅  |<br>| Top 2 is KFC      | 蔬菜沙拉      |   日本料理 |<br>| Top 3 is 老豆腐 | 意大利面      |    麻辣小龙虾 |</p>
+<blockquote>
+<p>showDes($event,item)，传event的方法，showDes: function (e, item) {<br>                        $(e.target).tooltip();<br>                    },</p>
+<p>万能的jquery,在很多类似的场景下还是很有用的：updated: function () {<br>    var isViewPage = this.getQueryString(“isViewPage”);<br>    if (isViewPage &amp;&amp; isViewPage == 1) {<br>        $(‘.pgbox’).find(‘input, select’).attr(‘readonly’, true).attr(‘disabled’, true);<br>        $(‘.pgbox’).find(‘.del-icon, button, .tddelete’).remove();<br>    }<br>}</p>
+<p>数据字典的用法 serviceTypeDic: {<br>                    ‘1’:’人工’,<br>                    ‘2’: ‘系统’,<br>                    ‘3’: ‘人工/系统’<br>                },                  </p>
+<p> 代码：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>早餐</th>
+<th style="text-align:center">午餐</th>
+<th style="text-align:right">晚餐</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td><td width="10%"></td>
+</tr>
+</tbody>
+</table>
+<pre><code>        &lt;span class=&quot;optiontex&quot; v-if=&quot;isEdit&quot;&gt;
+            &lt;select class=&quot;form-control sel&quot; v-model=&quot;item.serviceType&quot; v-on:change=&apos;changeServiceType(item)&apos;&gt;
+                &lt;option v-for=&quot;(value, key) in serviceTypeDic&quot; v-bind:value=&quot;key&quot;&gt;{{value}}&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/span&gt;
+        &lt;span v-if=&quot;!isEdit&quot;&gt;{{serviceTypeDic[item.serviceType]}}&lt;/span&gt;
+&lt;/td&gt;     | 喝粥 |  火锅  |
+</code></pre><p>| Top 2 is KFC      | 蔬菜沙拉      |   日本料理 |<br>| Top 3 is 老豆腐 | 意大利面      |    麻辣小龙虾 |</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/259-0ad0d0bfc1c608b6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
       
