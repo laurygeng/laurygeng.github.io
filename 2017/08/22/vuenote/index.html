@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="最近做的项目是使用vue实现后管系统 这个项目中的坑： 在不封组件的情况下，html元素先被解析，在没有加载vue.js之前是不能被识别的，会有短时间的闪现 所以还是建议使用组件化的方式，或者可以在app（vue的scope内）在包裹一层，这样html就无法解析，不会有包含无法识别的vue信息的闪现 v-bind:之类的简写：的方式在某些编译器下（vs）会被去掉，建议写全 深拷贝和浅拷贝的问题，目">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/259-0ad0d0bfc1c608b6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-08-22T08:39:51.485Z">
+<meta property="og:updated_time" content="2017-08-22T08:42:18.742Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue在后管项目中的应用">
 <meta name="twitter:description" content="最近做的项目是使用vue实现后管系统 这个项目中的坑： 在不封组件的情况下，html元素先被解析，在没有加载vue.js之前是不能被识别的，会有短时间的闪现 所以还是建议使用组件化的方式，或者可以在app（vue的scope内）在包裹一层，这样html就无法解析，不会有包含无法识别的vue信息的闪现 v-bind:之类的简写：的方式在某些编译器下（vs）会被去掉，建议写全 深拷贝和浅拷贝的问题，目">
@@ -191,9 +191,7 @@
 <table>
 <thead>
 <tr>
-<th>早餐</th>
-<th style="text-align:center">午餐</th>
-<th style="text-align:right">晚餐</th>
+<th>上代码</th>
 </tr>
 </thead>
 <tbody>
@@ -205,19 +203,16 @@
 <pre><code>&lt;select class=&quot;form-control sel&quot; v-model=&quot;selProjectId&quot; v-on:change=&quot;changeProject(selProjectId)&quot;&gt;
     &lt;option v-for=&quot;item in projectList&quot; v-bind:value=&quot;item.ProjectId&quot;&gt;{{item.ProjectName}}&lt;/option&gt;
 &lt;/select&gt;
-</code></pre><p>        | 喝粥 |  火锅  |<br>| Top 2 is KFC      | 蔬菜沙拉      |   日本料理 |<br>| Top 3 is 老豆腐 | 意大利面      |    麻辣小龙虾 |</p>
+</code></pre><p>        | </p>
 <blockquote>
 <p>showDes($event,item)，传event的方法，showDes: function (e, item) {<br>                        $(e.target).tooltip();<br>                    },</p>
 <p>万能的jquery,在很多类似的场景下还是很有用的：updated: function () {<br>    var isViewPage = this.getQueryString(“isViewPage”);<br>    if (isViewPage &amp;&amp; isViewPage == 1) {<br>        $(‘.pgbox’).find(‘input, select’).attr(‘readonly’, true).attr(‘disabled’, true);<br>        $(‘.pgbox’).find(‘.del-icon, button, .tddelete’).remove();<br>    }<br>}</p>
 <p>数据字典的用法 serviceTypeDic: {<br>                    ‘1’:’人工’,<br>                    ‘2’: ‘系统’,<br>                    ‘3’: ‘人工/系统’<br>                },                  </p>
-<p> 代码：</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th>早餐</th>
-<th style="text-align:center">午餐</th>
-<th style="text-align:right">晚餐</th>
+<th>上代码</th>
 </tr>
 </thead>
 <tbody>
@@ -232,9 +227,8 @@
             &lt;/select&gt;
         &lt;/span&gt;
         &lt;span v-if=&quot;!isEdit&quot;&gt;{{serviceTypeDic[item.serviceType]}}&lt;/span&gt;
-&lt;/td&gt;     | 喝粥 |  火锅  |
-</code></pre><p>| Top 2 is KFC      | 蔬菜沙拉      |   日本料理 |<br>| Top 3 is 老豆腐 | 意大利面      |    麻辣小龙虾 |</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/259-0ad0d0bfc1c608b6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+&lt;/td&gt;     | 
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/259-0ad0d0bfc1c608b6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
       
 
