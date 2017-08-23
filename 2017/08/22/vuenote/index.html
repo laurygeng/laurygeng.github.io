@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="最近做的项目是使用vue实现后管系统 这个项目中的坑： 在不封组件的情况下，html元素先被解析，在没有加载vue.js之前是不能被识别的，会有短时间的闪现 所以还是建议使用组件化的方式，或者可以在app（vue的scope内）在包裹一层，这样html就无法解析，不会有包含无法识别的vue信息的闪现 v-bind:之类的简写：的方式在某些编译器下（vs）会被去掉，建议写全 深拷贝和浅拷贝的问题，目">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/259-0ad0d0bfc1c608b6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-08-23T03:04:21.234Z">
+<meta property="og:updated_time" content="2017-08-23T03:08:07.215Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue在后管项目中的应用">
 <meta name="twitter:description" content="最近做的项目是使用vue实现后管系统 这个项目中的坑： 在不封组件的情况下，html元素先被解析，在没有加载vue.js之前是不能被识别的，会有短时间的闪现 所以还是建议使用组件化的方式，或者可以在app（vue的scope内）在包裹一层，这样html就无法解析，不会有包含无法识别的vue信息的闪现 v-bind:之类的简写：的方式在某些编译器下（vs）会被去掉，建议写全 深拷贝和浅拷贝的问题，目">
@@ -180,11 +180,13 @@
 <li>保存的按钮可以有三种状态：<br>  编辑-保存-保存中-成功-编辑，<br>  编辑-保存-保存中-失败-保存</li>
 <li>保存成功之后才能去执行改变UI的操作和状态</li>
 <li>初始化的时候赋值需要严格按照数据真实的类型来，不然在执行方法的时候就会报错</li>
+<li>初始化的时候需要给数据赋一个空值，不然后台数据返回为Null或者underfine的时候就会报错</li>
 <li>要判断一下，有id的时候才去调用后端的方法，删除。否则就直接操作UI，不传id给后端的接口会报错。</li>
 <li>需要很多验证条件综合为true才能通过的时候需要多引入一个字段来判断是否所有的验证条件都通过了</li>
+<li>对于比较复杂的对象的处理的时候，记得拆分后还要插入会原有的数据结构。否则变更就不会生效了</li>
 </ul>
 <h3 id="CSS中犯的错："><a href="#CSS中犯的错：" class="headerlink" title="CSS中犯的错："></a>CSS中犯的错：</h3><p>结合bootStrap的使用过程中，尽量不要去直接改变原有的类的样式，而是写一个新的类来覆盖。否则很多地方都会受到影响</p>
-<h3 id="后期需要优化的地方："><a href="#后期需要优化的地方：" class="headerlink" title="后期需要优化的地方："></a>后期需要优化的地方：</h3><p>vuex的引入，对状态管理的理解<br>封装弹框和table组件<br>通用的方法可以提取出来放在一个地方，统一调用。就不用每个页面都写了，公共的css也是一样<br>目前的通用方法是校验不为空，为正整数，还有截取地址栏上面的参数</p>
+<h3 id="后期需要优化的地方："><a href="#后期需要优化的地方：" class="headerlink" title="后期需要优化的地方："></a>后期需要优化的地方：</h3><p>vuex的引入，对状态管理的理解<br>封装弹框和table组件<br>通用的方法可以提取出来放在一个地方，统一调用。就不用每个页面都写了，公共的css也是一样<br>目前的通用方法是：校验不为空，为正整数，还有截取地址栏上面的参数</p>
 <h3 id="后续可以积累的地方："><a href="#后续可以积累的地方：" class="headerlink" title="后续可以积累的地方："></a>后续可以积累的地方：</h3><blockquote>
 <p>下拉菜单的渲染：</p>
 </blockquote>
