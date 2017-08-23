@@ -143,6 +143,111 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-水平垂直居中" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/22/水平垂直居中/">水平垂直居中</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/22/水平垂直居中/" class="archive-article-date">
+  	<time datetime="2017-08-22T03:47:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这个是CSS排版、布局最常用的了，理一理，强化记忆</p>
+<h2 id="水平居中："><a href="#水平居中：" class="headerlink" title="水平居中："></a>水平居中：</h2><h3 id="父元素宽高已知："><a href="#父元素宽高已知：" class="headerlink" title="父元素宽高已知："></a>父元素宽高已知：</h3><h4 id="子元素宽度已知："><a href="#子元素宽度已知：" class="headerlink" title="子元素宽度已知："></a>子元素宽度已知：</h4><p>.parent{<br>   position: relative;<br>}<br>.child{<br>  position: absolute;<br>  top: 50%;<br>  left: 50%;<br>  margin-left: -子元素宽/2;<br>  margin-top: -子元素高度/2;<br>}</p>
+<h4 id="子元素宽度未知："><a href="#子元素宽度未知：" class="headerlink" title="子元素宽度未知："></a>子元素宽度未知：</h4><p>方法一：<br>将子元素设置为行内元素，父元素设置为text-align:center<br>.container{<br>    width: 300px;<br>    height: 200px;<br>    background: pink;<br>    position: relative;<br>    text-align: center;<br>}<br>.inner{<br>    display: inline-block;</p>
+<p>}<br>方法二：<br>也可以使用CSS3 transform属性（浏览器兼容性，只适用于ie9+）<br>.parent{<br>   position: relative;<br>}<br>.child{<br>  position: absolute;<br>  top: 50%;<br>  left: 50%;<br>  transform: translate(-50%, -50%);<br>}</p>
+<p>、、、</p>
+<h2 id="垂直居中："><a href="#垂直居中：" class="headerlink" title="垂直居中："></a>垂直居中：</h2><h2 id="单行行内元素："><a href="#单行行内元素：" class="headerlink" title="单行行内元素："></a>单行行内元素：</h2><p>、、、<br>方法一：<br>子元素的行高等于高度</p>
+<p>#container {<br>    height: 400px;<br>    background: pink;<br>}</p>
+<p>#inner{<br>    display: inline-block;<br>    height: 200px;<br>    line-height: 200px;<br>}<br>方法二：<br>如果需要兼容Ie8,需要在子元素和父元素之间在包一层<br>html:<br>  <div class="parent"><br>    <div class="child-wrap"><br>      <div class="child-content"><br>        这是子元素<br><br>        这是子元素<br>      </div><br>    </div><br>  </div><br>css:<br>    .parent{<br>        height: 100px;<br>     }<br>    .child-wrap{<br>        line-height: 100px;<br>    }<br>    .child-content{<br>      display: inline-block;<br>      line-height: normal;<br>      vertical-align: middle;<br>    }</p>
+<h2 id="多行元素："><a href="#多行元素：" class="headerlink" title="多行元素："></a>多行元素：</h2><p>方法一：<br>table-cell的方式有一点弊端就是其子元素的表现形式和行内元素类似，子元素不能独占一行</p>
+<pre><code>.container {
+    width: 200px;
+    height: 400px;
+    background: pink;
+    position: absolute;
+    display: table;
+    vertical-align:middle;
+}
+
+.inner{
+    display: table-cell;
+    vertical-align:middle;
+}
+</code></pre><p>方法二：<br>还有一个方法是设置一个空的行内元素，使其 height:100%，display:inline-block,vertical-align: middle; 并且 font-size:0。<br>设置一个空元素，高度和父元素相等，并且设置垂直居中的属性。<br>但是，这只是用与所有的行内元素的宽度和不超过父元素的宽度的情况。</p>
+<div class="container"><br>    <img src="WechatIMG110.jpg" width="50px"><br>    <img src="WechatIMG110.jpg" width="50px"><br>    <img src="WechatIMG110.jpg" width="50px"><br>    <p>123</p><br></div>
+
+<p>.container{<br>    width: 400px;<br>    height: 100px;<br>    background: pink;<br>    text-align: center;</p>
+<p>}<br>img{<br>    vertical-align: middle;</p>
+<p>}<br>p{<br>    display: inline-block;<br>    height: 100%;<br>    line-height: 100%;<br>    vertical-align: middle;<br>    font-size: 0;<br>}<br>、、、</p>
+<h3 id="父元素未知宽高未知："><a href="#父元素未知宽高未知：" class="headerlink" title="父元素未知宽高未知："></a>父元素未知宽高未知：</h3><p>通过设置padding: 上 右 下 左;一般可以达到我们的需要，最多再加上text-align: center;</p>
+<h3 id="图片和文字垂直居中"><a href="#图片和文字垂直居中" class="headerlink" title="图片和文字垂直居中"></a>图片和文字垂直居中</h3><p>方法一：</p>
+<div class="container"><br>    <img src="WechatIMG110.jpg" height="260"><br>    <p>123456</p><br></div>
+
+<p>.container {<br>    background: pink;<br>    padding: 20px;<br>    height: 400px;</p>
+<p>}<br>.container img{<br>    display: inline-block;<br>    vertical-align: middle;<br>}</p>
+<p>.container p{<br>    display: inline-block;</p>
+<p>}</p>
+<p>方法二：</p>
+<li><br>    <span></span><br>    <a></a><br></li>
+
+<p>让li里面的文字和图片居中对齐的方式，单行文本可以text-align：center，<br>左边的icon可以通过设置padding-left的方式给li的左边挪出一块空的地方来，然后通过绝对定位的方式，在那个位置上居中对齐<br>span.icon就display: inline-block;然后设置宽高，然后绝对定位+tarnslate(-50%,-50%)</p>
+<p>、、、</p>
+<p>原理：<br>text-align:center<br>这个只对行内元素有效，因此要使用必须将子元素设置为display:inline,或者display:inline-block</p>
+<p>height和line-height相同：<br>只适用于单行行内元素，</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/22/水平垂直居中/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vuenote" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -201,108 +306,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/08/22/vuenote/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-水平垂直居中" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/22/水平垂直居中/">vue在后管项目中的应用</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/22/水平垂直居中/" class="archive-article-date">
-  	<time datetime="2017-08-22T03:47:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="水平垂直居中："><a href="#水平垂直居中：" class="headerlink" title="水平垂直居中："></a>水平垂直居中：</h1><p>这个是排版布局普遍使用的地方了，所以理一理，强化记忆</p>
-<h2 id="水平居中："><a href="#水平居中：" class="headerlink" title="水平居中："></a>水平居中：</h2><h3 id="父元素宽高已知："><a href="#父元素宽高已知：" class="headerlink" title="父元素宽高已知："></a>父元素宽高已知：</h3><h4 id="子元素宽度已知："><a href="#子元素宽度已知：" class="headerlink" title="子元素宽度已知："></a>子元素宽度已知：</h4><p>、、、<br>.parent{<br>   position: relative;<br>}<br>.child{<br>  position: absolute;<br>  top: 50%;<br>  left: 50%;<br>  margin-left: -子元素宽/2;<br>  margin-top: -子元素高度/2;<br>}</p>
-<p>也可以使用CSS3 transform属性（浏览器兼容性，只适用于ie9+）</p>
-<p>.child{<br>  position: absolute;<br>  top: 50%;<br>  left: 50%;<br>  transform: translate(-50%, -50%);<br>}</p>
-<h4 id="子元素宽度未知："><a href="#子元素宽度未知：" class="headerlink" title="子元素宽度未知："></a>子元素宽度未知：</h4><p>.container{<br>    width: 300px;<br>    height: 200px;<br>    background: pink;<br>    position: relative;<br>    text-align: center;<br>}<br>.inner{<br>    display: inline-block;</p>
-<p>}</p>
-<p>如果需要兼容Ie8,需要在子元素和父元素之间在包一层</p>
-<p>html:<br>  <div class="parent"><br>    <div class="child-wrap"><br>      <div class="child-content"><br>        这是子元素<br><br>        这是子元素<br>      </div><br>    </div><br>  </div><br>css:<br>    .parent{<br>        height: 100px;<br>     }<br>    .child-wrap{<br>        line-height: 100px;<br>    }<br>    .child-content{<br>      display: inline-block;<br>      line-height: normal;<br>      vertical-align: middle;<br>    }<br>、、、</p>
-<h2 id="垂直居中："><a href="#垂直居中：" class="headerlink" title="垂直居中："></a>垂直居中：</h2><h2 id="单行行内元素："><a href="#单行行内元素：" class="headerlink" title="单行行内元素："></a>单行行内元素：</h2><p>、、、<br>子元素的行高等于高度</p>
-<p>#container {<br>    height: 400px;<br>    background: pink;<br>}</p>
-<p>#inner{<br>    display: inline-block;<br>    height: 200px;<br>    line-height: 200px;<br>}</p>
-<h2 id="多行元素："><a href="#多行元素：" class="headerlink" title="多行元素："></a>多行元素：</h2><p>table-cell的方式有一点弊端就是其子元素的表现形式和行内元素类似，子元素不能独占一行</p>
-<pre><code>.container {
-    width: 200px;
-    height: 400px;
-    background: pink;
-    position: absolute;
-    display: table;
-    vertical-align:middle;
-}
-
-.inner{
-    display: table-cell;
-    vertical-align:middle;
-}
-</code></pre><p>还有一个方法是设置一个空的行内元素，使其 height:100%，display:inline-block,vertical-align: middle; 并且 font-size:0。<br>设置一个空元素，高度和父元素相等，并且设置垂直居中的属性。<br>但是，这只是用与所有的行内元素的宽度和不超过父元素的宽度的情况。</p>
-<div class="container"><br>    <img src="WechatIMG110.jpg" width="50px"><br>    <img src="WechatIMG110.jpg" width="50px"><br>    <img src="WechatIMG110.jpg" width="50px"><br>    <p>123</p><br></div>
-
-<p>.container{<br>    width: 400px;<br>    height: 100px;<br>    background: pink;<br>    text-align: center;</p>
-<p>}<br>img{<br>    vertical-align: middle;</p>
-<p>}<br>p{<br>    display: inline-block;<br>    height: 100%;<br>    line-height: 100%;<br>    vertical-align: middle;<br>    font-size: 0;<br>}</p>
-<p>、、、</p>
-<h3 id="父元素未知宽高未知："><a href="#父元素未知宽高未知：" class="headerlink" title="父元素未知宽高未知："></a>父元素未知宽高未知：</h3><p>通过设置padding: 上 右 下 左;一般可以达到我们的需要，最多再加上text-align: center;</p>
-<h3 id="图片和文字垂直居中"><a href="#图片和文字垂直居中" class="headerlink" title="图片和文字垂直居中"></a>图片和文字垂直居中</h3><div class="container"><br>    <img src="WechatIMG110.jpg" height="260"><br>    <p>123456</p><br></div>
-
-<p>.container {<br>    background: pink;<br>    padding: 20px;<br>    height: 400px;</p>
-<p>}<br>.container img{<br>    display: inline-block;<br>    vertical-align: middle;<br>}</p>
-<p>.container p{<br>    display: inline-block;</p>
-<p>}</p>
-<p>、、、</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/22/水平垂直居中/">展开全文 >></a>
         </p>
       
 
